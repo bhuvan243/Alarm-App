@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alarm Web App</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&family=Nunito+Sans:opsz@6..12&family=Poppins&family=Roboto&display=swap"
-        rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="./universalStyles.css">
+    <link rel="stylesheet" href="./functionalStyles.css">
 </head>
-
 <body>
-    <h3>Multiple Timers App</h3>
-    <span class="timer-container" id="timer-container">
-        <span>Set Time :</span>
-        <span class="timer-display" id="timer-display">
-            <input type="number" min="0" max="24" id="hour-input" placeholder="hh">:
-            <input type="number" min="0" max="60" id="minute-input" placeholder="mm">:
-            <input type="number" min="0" max="60" id="second-input" placeholder="ss">
-        </span>
-        <button class="btn" id="btn-set">Start New Timer</button>
-    </span>
-    <h5 class="Current-timer">Current Timers</h5>
-    <div id="Current-timer-container" class="Current-timer-container">
-        <h5>You have no timers currently!</h5>
-    </div>
-    <audio src="./alarm-web-app.mp3" class="hide" id="audio"></audio>
-    <script src="./script.js"></script>
+    <main>
+        <h3>Multiple Timers App</h3>
+        <div id="timer-card" class="timer-card">
+            <span>Set Time :</span>
+            <span id="timer-container">
+                <input id="hour" type="number" min="0" max="24" placeholder="hh">
+                <input id="minute" type="number" min="0" max="60" placeholder="mm">
+                <input id="seconds" type="number" min="0" max="60" placeholder="ss">
+            </span>
+            <button id="set-btn">Set</button>
+        </div>
+        <!-- here we have the dynamically created timers -->
+        <section>
+            <h4 id="current-timers">Current Timers</h3>
+            <div id="active-timers-container">
+                <span id="no-timers-display-msg">You have no timers currently</span>
+            </div>
+        </section>
+        <audio id="audio-file">
+            <source src="https://www.computerhope.com/jargon/m/example.mp3" />
+        </audio>
+    </main>
+    <!-- Link external js files -->
+    <script src="./getElements.js"></script>
+    <script src="./dynamicFunctions.js"></script>
 </body>
-
 </html>
